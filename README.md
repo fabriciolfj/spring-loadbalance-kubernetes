@@ -53,3 +53,14 @@ spring:
       ribbon:
         enabled: false
 ```
+
+##### Comunicação através de multiplos namespaces
+Por padrão o spring cloud kubernetes, permite fazer o load balance dentro do mesmo namespace. Para permitir realizar a descoberta em vários namespaces, habilite a configuração abaixo:
+
+```
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        all-namespaces: true
+```
