@@ -76,7 +76,8 @@ Gateway funciona como um portal de entrada do nosso sistema, podemos chamar qual
 ```      
 
 ```
-curl http://ip do multipass:8080/departamento/id do departamento
+curl http://ip do multipass:porta gerada pelo service/departamento/id do departamento
+Exemplo: curl POST 10.75.173.174:30182/departamento/v1/
 ```
 Ou podemos utilizar o swagger: ttp://ip multipass:8080/swagger-ui/index.html
 Obs: O serviço do gateway está com a porta 8080 exposta nesse exemplo, ou seja, nodeport: 8080.
