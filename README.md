@@ -70,8 +70,8 @@ O Spring Cloud Gateway utiliza o mesmo mecanismo load balance, das demais aplica
 Gateway funciona como um portal de entrada do nosso sistema, podemos chamar qualquer uma das nossas aplicações utilizando as rotas já definidas. Exemplo:
 ```
 <dependency>
-  <groupId>org.springframework.cloud</groupId>
-	<artifactId>spring-cloud-starter-kubernetes-loadbalancer</artifactId>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-kubernetes-loadbalancer</artifactId>
 </dependency>
 ```      
 
