@@ -73,3 +73,15 @@ curl http://ip do multipass:8080/departamento/id do departamento
 ```
 Ou podemos utilizar o swagger: ttp://ip multipass:8080/swagger-ui/index.html
 Obs: O serviço do getway está com a porta 8080 exposta nesse exemplo, ou seja, nodeport: 8080.
+
+##### Circuit breaker
+Estamos utilizando no serviço de departamento, o circuit break Resilience4j, para isso colocamos a dependência abaixo:
+```
+<dependency>
+   <groupId>org.springframework.cloud</groupId>
+   <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+</dependency>
+```
+
+##### Conclusão
+Load balance é um dos padrões chave numa arquitectura de microserviços e Spring Cloud está a substituindo o cliente Ribbon. Por padrão, o balanceamento de carga no Kubernetes é baseado em serviços. Por conseguinte, é necessário utilizar ferramentas adicionais para mecanismos de encaminhamento mais avançados. O Spring Cloud Kubernetes vem com algumas características interessantes. Uma delas é a capacidade de balanceamento de carga através de múltiplos namespaces. Também pode utilizar os componentes adicionais Spring Cloud como um disjuntor. Em comparação com ferramentas como o Istio, ainda não é muito. Será uma hipótese de melhoria? Veremos. No entanto, o Spring Cloud Kubernetes é atualmente um dos projetos mais populares do Spring Cloud, será este uma boa escolha se quiser migrar a sua arquitectura de microserviços Spring Cloud para Kubernetes.
