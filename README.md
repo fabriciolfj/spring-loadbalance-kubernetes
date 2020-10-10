@@ -25,14 +25,14 @@ public interface FuncionarioClient {
     List<FuncionarioResponseDTO> findByDepartamento(@PathVariable("id") final String id);
 }
 ```
-OpenFeign é ativo após anotar a classe principal com @EnableFeignClients(basePackageClasses = FuncionarioClient.class), em seguido pode-se injeta-lo para uso.
+OpenFeign é ativado após anotar a classe principal com @EnableFeignClients(basePackageClasses = FuncionarioClient.class), em seguido pode-se injeta-lo para uso.
 
 RestTemplate é oposição ao OpenFeign, este é de baixo nível e precisamos anota-lo com @LoadBalanced.
 
 ```
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+@Bean
+@LoadBalanced
+public RestTemplate restTemplate() {
+    return new RestTemplate();
+}
 ```
