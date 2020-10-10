@@ -42,3 +42,14 @@ Na classe DepartamentoService, existem 2 métodos de busca por id, um utilizando
 ##### Deploy da aplicação em kubernetes
 Temos dois micro-serviços, cada um deles funcionará em duas instâncias, ambos se comunicarão com mongodb. Existe também a aplicação gateway, construída em cima do Spring Cloud Gateway, que fornece um único ponto final API a todos os serviços. Naturalmente todas as nossas aplicações usufruirão do Spring Cloud Load Balancer para a gestão de tráfego.
 Na raiz do projeto existe uma pasta k8s, onde estão os manifestos para deploy no kubernetes. Para essa poc, criei o ambiente com base no multipass e microk8s.
+
+##### Comunicação modo pod
+Por padrão, o balanceador de carga Spring Cloud Kubernetes usa o modo POD. Neste modo obtém a lista de pontos finais do kubernetes, para detectar o endereço IP de todos os pods da aplicação. Nesse caso, a única coisa a fazer é desativar a propriedade salientada abaixo.
+
+```
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+```
