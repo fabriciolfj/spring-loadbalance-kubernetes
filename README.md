@@ -64,3 +64,11 @@ spring:
       discovery:
         all-namespaces: true
 ```
+
+##### Load balance no spring cloud gateway
+O Spring Cloud Gateway utiliza o mesmo mecanismo load balance das demais aplicações spring cloud. Para o permitir em kubernetes, precisamos de incluir o balanceador de carga Spring Cloud - Cloud Starter-kubernetes. Devemos também ativar o Spring Cloud DiscoveryClient e desactivar o Spring Cloud Ribbon.
+Gateway funciona como um portal de entrada do nosso sistema, podemos chamar qualquer uma das nossas aplicações utilizando as rotas já definidas. Exemplo:
+```
+curl http://ip do multipass:8080/departamento/id do departamento
+```
+Obs: O serviço do getway está com a porta 8080 exposta nesse exemplo, ou seja, nodeport: 8080.
