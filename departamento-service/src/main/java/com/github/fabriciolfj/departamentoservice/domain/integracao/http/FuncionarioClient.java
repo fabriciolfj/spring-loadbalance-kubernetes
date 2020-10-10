@@ -10,6 +10,9 @@ import java.util.List;
 @FeignClient(name = "funcionario")
 public interface FuncionarioClient {
 
-    @GetMapping("/departamento/{id}")
+    @GetMapping("/v1/departamento/{id}")
     List<FuncionarioResponseDTO> findByDepartamento(@PathVariable("id") final String id);
+
+    @GetMapping("/v1/departamentodelay/{departamentoId}")
+    List<FuncionarioResponseDTO> findByDepartamentoDelay(@PathVariable("id") final String id);
 }

@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "funcionario")
+@Document(collection = "departamento")
 public class Departamento {
 
     @Id

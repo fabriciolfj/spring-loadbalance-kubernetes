@@ -1,16 +1,10 @@
+
 spring:
   application:
-    name: departamento
+    name: funcionario
   data:
     mongodb:
       uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb/${MONGO_DATABASE}
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
-    kubernetes:
-      discovery:
-        all-namespaces: true
 
 logging:
   pattern:

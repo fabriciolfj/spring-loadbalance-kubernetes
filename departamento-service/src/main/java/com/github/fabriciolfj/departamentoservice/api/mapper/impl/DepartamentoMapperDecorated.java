@@ -5,12 +5,14 @@ import com.github.fabriciolfj.departamentoservice.api.response.DepartamentoRespo
 import com.github.fabriciolfj.departamentoservice.api.response.FuncionarioResponseDTO;
 import com.github.fabriciolfj.departamentoservice.domain.documents.Departamento;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 @NoArgsConstructor
 public abstract class DepartamentoMapperDecorated implements DepartamentoMapper {
 
+    @Autowired
     private DepartamentoMapper mapper;
 
     @Override

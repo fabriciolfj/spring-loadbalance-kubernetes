@@ -1,12 +1,12 @@
-package com.github.fabriciolfj.funcionarioservice;
+package com.github.fabriciolfj.gatewayservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-//@SpringBootTest
-class FuncionarioServiceApplicationTests {
+@SpringBootTest
+class GatewayServiceApplicationTests {
 
-	//@Test
+	@Test
 	void contextLoads() {
 	}
 

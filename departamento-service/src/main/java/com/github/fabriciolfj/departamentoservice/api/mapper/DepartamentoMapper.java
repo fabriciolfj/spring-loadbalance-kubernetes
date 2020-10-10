@@ -18,7 +18,7 @@ public interface DepartamentoMapper {
     @Mapping(source = "nome", target = "nome")
     Departamento toDocument(final DepartamentoRequestDTO dto);
 
-    @Mapping(source = "name", target = "name")
-    @Mapping(source = "id", target = "id")
+    @Mapping(source = "departamento.nome", target = "nome")
+    @Mapping(source = "departamento.id", target = "id")
     DepartamentoResponseDTO toResponse(final Departamento departamento, final List<FuncionarioResponseDTO> funcionarios);
 }

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: funcionario
+          uri: lb://funcionario
+          predicates:
+            - Path=/funcionario/**
+          filters:
+            - RewritePath=/funcionario/(?<path>.*), /$\{path}
+        - id: departamento
+          uri: lb://departamento
+          predicates:
+            - Path=/departamento/**
+          filters:
+            - RewritePath=/departamento/(?<path>.*), /$\{path}
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
