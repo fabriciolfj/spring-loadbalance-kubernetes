@@ -14,3 +14,25 @@ Neste artigo, vou mostrar-lhe como utilizar o módulo Spring Cloud Kubernetes Lo
    <artifactId>spring-cloud-starter-openfeign</artifactId>
 </dependency>
 ```
+
+##### Implementando o client funcionário
+O Spring Cloud OpenFeign é um cliente REST declarativo. Por conseguinte, é necessário criar uma interface com métodos e anotações Spring MVC. É importante definir o nome correto dentro da anotação @FeignClient. Este nome tem de ser o mesmo que o nome do serviço Kubernetes alvo. No exemplo de código que se segue, vê-se uma implementação do cliente do serviço funcionário dentro do serviço departamento.
+```
+@FeignClient(name = "funcionario")
+public interface FuncionarioClient {
+    
+    @GetMapping("/departamento/{id}")
+    List<FuncionarioResponseDTO> findByDepartamento(@PathVariable("id") final String id);
+}
+```
+OpenFeign é ativo após anotar a classe principal com @EnableFeignClients(basePackageClasses = FuncionarioClient.class), em seguido pode-se injeta-lo para uso.
+
+RestTemplate é oposição ao OpenFeign, este é de baixo nível e precisamos anota-lo com @LoadBalanced.
+
+```
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+```
