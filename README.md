@@ -71,4 +71,5 @@ Gateway funciona como um portal de entrada do nosso sistema, podemos chamar qual
 ```
 curl http://ip do multipass:8080/departamento/id do departamento
 ```
+Ou podemos utilizar o swagger: ttp://ip multipass:8080/swagger-ui/index.html
 Obs: O serviço do getway está com a porta 8080 exposta nesse exemplo, ou seja, nodeport: 8080.
