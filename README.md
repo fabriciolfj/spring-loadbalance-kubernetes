@@ -38,3 +38,6 @@ public RestTemplate restTemplate() {
 ```
 
 Na classe DepartamentoService, existem 2 métodos de busca por id, um utilizando o OpenFeign e outro RestTemplate, justamente para demonstrar os 2 modos de comunicação salientados no inicio.
+
+##### Deploy da aplicação em kubernetes
+Temos dois micro-serviços, cada um deles funcionará em duas instâncias, ambos se comunicarão com mongodb. Existe também a aplicação gateway, construída em cima do Spring Cloud Gateway. que fornece um único ponto final API a todos os serviços. Naturalmente todas as nossas aplicações usufruirão do Spring Cloud Load Balancer para a gestão de tráfego.
