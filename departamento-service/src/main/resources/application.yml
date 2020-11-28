@@ -10,7 +10,7 @@ spring:
         enabled: false
     kubernetes:
       reload:
-        enabled: true
+        enabled: true #recarregar as configurações quando mudar o configmap ou secret.
       discovery:
         all-namespaces: true
 
