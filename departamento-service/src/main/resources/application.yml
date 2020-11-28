@@ -9,6 +9,8 @@ spring:
       ribbon:
         enabled: false
     kubernetes:
+      reload:
+        enabled: true
       discovery:
         all-namespaces: true
 
