@@ -1,6 +1,6 @@
 ### Spring Cloud Kubernetes Load Balancer
 
-O suporte do Spring Cloud Kubernetes Load Balancer foi adicionado no último lançamento do Spring Cloud Hoxton.SR8. Foi provavelmente o último projecto em Spring Cloud que utilizou o Ribbon como equilibrador de carga do lado do cliente. A implementação actual baseia-se no projecto Spring Cloud LoadBalancer. Fornece dois modos de comunicação. O primeiro deles detecta os endereços IP de todos os pods em funcionamento dentro de um determinado serviço. O segundo deles utiliza o nome Kubernetes Service para pesquisar todas as instâncias alvo.
+O suporte do Spring Cloud Kubernetes Load Balancer foi adicionado no último lançamento do Spring Cloud Hoxton.SR8. Foi provavelmente o último projecto em Spring Cloud que utilizou o Ribbon como equilibrador de carga do lado do cliente. A implementação atual baseia-se no projecto Spring Cloud LoadBalancer. Fornece dois modos de comunicação. O primeiro deles detecta os endereços IP de todos os pods em funcionamento dentro de um determinado serviço. O segundo deles utiliza o nome Kubernetes Service para pesquisar todas as instâncias alvo.
 Neste artigo, demonstro o uso do Spring Cloud Kubernetes LoadBalancer na sua aplicação. Primeiro, demonstrarei as diferenças entre os modos POD e SERVICE. Depois, permitiremos o balanceamento de carga através de múltiplos namespaces. Finalmente, implementaremos um mecanismo de tolerância a falhas com o projecto Spring Cloud Circuit Breaker.
 
 ##### Utilizaremos as depêndencias abaixo:
